@@ -1,0 +1,31 @@
+#######################################
+# Syntax Coloring Map for 107-Arduino-TCS3472
+#######################################
+
+#######################################
+# Class (KEYWORD1)
+#######################################
+
+ArduinoTCS3472	KEYWORD1
+TCS3472	KEYWORD1
+TCS3472_Io	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+angle_raw	KEYWORD2
+read	KEYWORD2
+write	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+TCS3472_ClearErrorFlag	LITERAL1
+TCS3472_ProgrammingControl	LITERAL1
+TCS3472_OTP_RegisterZeroPosition_HIGH	LITERAL1
+TCS3472_OTP_RegisterZeroPosition_LOW	LITERAL1
+TCS3472_Diagnostics_AutomaticGainControl	LITERAL1
+TCS3472_Magnitude	LITERAL1
+TCS3472_Angle	LITERAL1
