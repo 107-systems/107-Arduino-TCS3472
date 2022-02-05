@@ -39,13 +39,14 @@ bool ArduinoTCS3472::begin(bool const use_extended)
 {
   /* Check the CHIP ID if it matches the expected value.
    */
-  if (_io.read(TCS3472::Register::TCS3472_ReadCommandRegister) != TCS3472::ID_EXPECTED_ID) {
+  if (_io.read(TCS3472::Register::TCS3472_ID) != TCS3472::ID_EXPECTED_ID) {
     _error = TCS3472::Error::ChipId;
     return false;
   }
 
-  if(use_extended == true) _io.write(TCS3472::Register::TCS3472_WriteCommandExtendedRange);
-  else _io.write(TCS3472::Register::TCS3472_WriteCommandStandardRange);
+  _io.write(TCS3472::Register::TCS3472_WTIME, 0xFF);   /* set WTIME to default value */
+  _io.write(TCS3472::Register::TCS3472_ATIME, 0xFF);   /* set ATIME to default value */
+  _io.write(TCS3472::Register::TCS3472_ENABLE, 0x0B);   /* set WEN, PEN, AEN and PON bit in ENABLE */
 
   return true;
 }
