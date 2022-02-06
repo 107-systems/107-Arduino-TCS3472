@@ -24,13 +24,21 @@ class ArduinoTCS3472
 
 public:
 
+  struct colorDataRaw{
+                 uint16_t clear;
+                 uint16_t red;
+                 uint16_t green;
+                 uint16_t blue;
+                    };
+
+
   ArduinoTCS3472(TCS3472::I2cWriteFunc write,
                  TCS3472::I2cReadFunc read,
  //                TCS3472::DelayFunc delay,
                  uint8_t const i2c_slave_addr);
 
   bool begin(bool const use_extended);
-  float get_lux();
+  void get_colorData(struct colorDataRaw * color);
 
   TCS3472::Error error();
 

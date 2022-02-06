@@ -52,10 +52,12 @@ bool ArduinoTCS3472::begin(bool const use_extended)
 }
 
 
-float ArduinoTCS3472::get_lux()
+void ArduinoTCS3472::get_colorData(struct colorDataRaw * color)
 {
-  float r=0, light_level=0;
-  return light_level;
+  color->clear = _io.read16((Register const)((uint8_t)(TCS3472::Register::TCS3472_CDATAL)|0x40));
+  color->red   = _io.read16((Register const)((uint8_t)(TCS3472::Register::TCS3472_RDATAL)|0x40));
+  color->green = _io.read16((Register const)((uint8_t)(TCS3472::Register::TCS3472_GDATAL)|0x40));
+  color->blue  = _io.read16((Register const)((uint8_t)(TCS3472::Register::TCS3472_BDATAL)|0x40));
 }
 
 TCS3472::Error ArduinoTCS3472::error()

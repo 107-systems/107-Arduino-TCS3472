@@ -48,6 +48,7 @@ public:
 
   void    write   (Register const reg);
   uint8_t read    (Register const reg);
+  uint16_t read16 (Register const reg);
   void    write   (Register const reg, uint8_t const val);
   void    read    (Register const reg, uint8_t * buf, size_t const bytes);
   void    write   (Register const reg, uint8_t const * buf, size_t const bytes);

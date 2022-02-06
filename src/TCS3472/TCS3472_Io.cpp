@@ -41,6 +41,13 @@ uint8_t TCS3472_Io::read(Register const reg)
   return data;
 }
 
+uint16_t TCS3472_Io::read16(Register const reg)
+{
+  uint16_t data = 0;
+  read(reg, (uint8_t *)&data, 2);
+  return data;
+}
+
 void TCS3472_Io::write(Register const reg)
 {
   uint8_t const val=0;
