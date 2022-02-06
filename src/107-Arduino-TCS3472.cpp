@@ -39,14 +39,14 @@ bool ArduinoTCS3472::begin(bool const use_extended)
 {
   /* Check the CHIP ID if it matches the expected value.
    */
-  if (_io.read(TCS3472::Register::TCS3472_ID) != TCS3472::ID_EXPECTED_ID) {
+  if (_io.read((Register const)((uint8_t)(TCS3472::Register::TCS3472_ID)|0x80)) != TCS3472::ID_EXPECTED_ID) {
     _error = TCS3472::Error::ChipId;
     return false;
   }
 
-  _io.write(TCS3472::Register::TCS3472_WTIME, 0xFF);   /* set WTIME to default value */
-  _io.write(TCS3472::Register::TCS3472_ATIME, 0xFF);   /* set ATIME to default value */
-  _io.write(TCS3472::Register::TCS3472_ENABLE, 0x0B);   /* set WEN, PEN, AEN and PON bit in ENABLE */
+  _io.write((Register const)((uint8_t)(TCS3472::Register::TCS3472_WTIME)|0x80), 0xFF);   /* set WTIME to default value */
+  _io.write((Register const)((uint8_t)(TCS3472::Register::TCS3472_ATIME)|0x80), 0xFF);   /* set ATIME to default value */
+  _io.write((Register const)((uint8_t)(TCS3472::Register::TCS3472_ENABLE)|0x80), 0x0B);   /* set WEN, PEN, AEN and PON bit in ENABLE */
 
   return true;
 }
@@ -54,10 +54,10 @@ bool ArduinoTCS3472::begin(bool const use_extended)
 
 void ArduinoTCS3472::get_colorData(struct colorDataRaw * color)
 {
-  color->clear = _io.read16((Register const)((uint8_t)(TCS3472::Register::TCS3472_CDATAL)|0x40));
-  color->red   = _io.read16((Register const)((uint8_t)(TCS3472::Register::TCS3472_RDATAL)|0x40));
-  color->green = _io.read16((Register const)((uint8_t)(TCS3472::Register::TCS3472_GDATAL)|0x40));
-  color->blue  = _io.read16((Register const)((uint8_t)(TCS3472::Register::TCS3472_BDATAL)|0x40));
+  color->clear = _io.read16((Register const)((uint8_t)(TCS3472::Register::TCS3472_CDATAL)|0xA0));
+  color->red   = _io.read16((Register const)((uint8_t)(TCS3472::Register::TCS3472_RDATAL)|0xA0));
+  color->green = _io.read16((Register const)((uint8_t)(TCS3472::Register::TCS3472_GDATAL)|0xA0));
+  color->blue  = _io.read16((Register const)((uint8_t)(TCS3472::Register::TCS3472_BDATAL)|0xA0));
 }
 
 TCS3472::Error ArduinoTCS3472::error()
