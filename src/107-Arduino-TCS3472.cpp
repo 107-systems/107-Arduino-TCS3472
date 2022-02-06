@@ -35,7 +35,7 @@ ArduinoTCS3472::ArduinoTCS3472(TCS3472::I2cWriteFunc write,
  * PUBLIC MEMBER FUNCTIONS
  **************************************************************************************/
 
-bool ArduinoTCS3472::begin(bool const use_extended)
+bool ArduinoTCS3472::begin()
 {
   /* Check the CHIP ID if it matches the expected value.
    */

@@ -37,7 +37,7 @@ public:
  //                TCS3472::DelayFunc delay,
                  uint8_t const i2c_slave_addr);
 
-  bool begin(bool const use_extended);
+  bool begin();
   void get_colorData(struct colorDataRaw * color);
 
   TCS3472::Error error();

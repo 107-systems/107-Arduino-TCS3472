@@ -39,7 +39,7 @@ void setup()
   Wire.begin();
 
   /* Configure TSL2550 with Extended Range */
-  if (!tcs3472.begin(true))
+  if (!tcs3472.begin())
   {
     Serial.print("ArduinoTCS3472::begin(...) failed, error code ");
     Serial.print((int)tcs3472.error());
