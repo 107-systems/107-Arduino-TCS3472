@@ -52,7 +52,7 @@ void setup()
 void loop()
 {
   ArduinoTCS3472::colorDataRaw color;
-  
+
   tcs3472.get_colorData(&color);
   Serial.print("Clear = ");
   Serial.println(color.clear);
