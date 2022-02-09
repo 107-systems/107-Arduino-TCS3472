@@ -41,7 +41,7 @@ void setup()
   if (!tcs3472.begin())
   {
     Serial.print("ArduinoTCS3472::begin(...) failed, error code ");
-    Serial.print(static cast<int>(tcs3472.error()));
+    Serial.print(static_cast<int>(tcs3472.error()));
     for(;;) { }
   }
 
