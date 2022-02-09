@@ -22,10 +22,10 @@ write	KEYWORD2
 # Constants (LITERAL1)
 #######################################
 
-TCS3472_ClearErrorFlag	LITERAL1
-TCS3472_ProgrammingControl	LITERAL1
-TCS3472_OTP_RegisterZeroPosition_HIGH	LITERAL1
-TCS3472_OTP_RegisterZeroPosition_LOW	LITERAL1
-TCS3472_Diagnostics_AutomaticGainControl	LITERAL1
-TCS3472_Magnitude	LITERAL1
-TCS3472_Angle	LITERAL1
+ClearErrorFlag	LITERAL1
+ProgrammingControl	LITERAL1
+OTP_RegisterZeroPosition_HIGH	LITERAL1
+OTP_RegisterZeroPosition_LOW	LITERAL1
+Diagnostics_AutomaticGainControl	LITERAL1
+Magnitude	LITERAL1
+Angle	LITERAL1

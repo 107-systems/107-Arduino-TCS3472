@@ -23,7 +23,6 @@ void i2c_generic_read (uint8_t const i2c_slave_addr, uint8_t const reg_addr, uin
 
 ArduinoTCS3472 tcs3472(i2c_generic_write,
                        i2c_generic_read,
-//                       delay,
                        TCS3472::DEFAULT_I2C_ADDR);
 
 /**************************************************************************************
@@ -42,7 +41,7 @@ void setup()
   if (!tcs3472.begin())
   {
     Serial.print("ArduinoTCS3472::begin(...) failed, error code ");
-    Serial.print((int)tcs3472.error());
+    Serial.print(static cast<int>(tcs3472.error()));
     for(;;) { }
   }
 

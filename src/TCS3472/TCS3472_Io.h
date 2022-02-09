@@ -43,17 +43,12 @@ public:
   TCS3472_Io(I2cWriteFunc write, I2cReadFunc read, uint8_t const i2c_slave_addr);
 
 
-  inline void set_i2c_slace_addr(uint8_t const i2c_slave_addr) { _i2c_slave_addr = i2c_slave_addr; }
-
-
   void    write   (Register const reg);
   uint8_t read    (Register const reg);
   uint16_t read16 (Register const reg);
   void    write   (Register const reg, uint8_t const val);
   void    read    (Register const reg, uint8_t * buf, size_t const bytes);
   void    write   (Register const reg, uint8_t const * buf, size_t const bytes);
-  void    modify  (Register const reg, uint8_t const bitmask, uint8_t const val);
-  bool    isBitSet(Register const reg, uint8_t const bitpos);
 
 
 private:
@@ -61,7 +56,7 @@ private:
   I2cWriteFunc _write;
   I2cReadFunc _read;
 
-  uint8_t _i2c_slave_addr;
+  uint8_t const _i2c_slave_addr;
 };
 
 /**************************************************************************************

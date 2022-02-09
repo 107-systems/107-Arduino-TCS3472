@@ -23,7 +23,6 @@ using namespace TCS3472;
 
 ArduinoTCS3472::ArduinoTCS3472(TCS3472::I2cWriteFunc write,
                                TCS3472::I2cReadFunc read,
- //                              TCS3472::DelayFunc delay,
                                uint8_t const i2c_slave_addr)
 : _error{TCS3472::Error::None}
 , _io{write, read, i2c_slave_addr}
