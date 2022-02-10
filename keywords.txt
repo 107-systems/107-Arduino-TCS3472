@@ -1,0 +1,44 @@
+#######################################
+# Syntax Coloring Map for 107-Arduino-TCS3472
+#######################################
+
+#######################################
+# Class (KEYWORD1)
+#######################################
+
+ArduinoTCS3472	KEYWORD1
+TCS3472	KEYWORD1
+TCS3472_Io	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+get_colorData	KEYWORD2
+read	KEYWORD2
+write	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+TCS3472_ENABLE	LITERAL1
+TCS3472_ATIME	LITERAL1
+TCS3472_WTIME	LITERAL1
+TCS3472_AILTL	LITERAL1
+TCS3472_AILTH	LITERAL1
+TCS3472_AIHTL	LITERAL1
+TCS3472_AIHTH	LITERAL1
+TCS3472_PERS	LITERAL1
+TCS3472_CONFIG	LITERAL1
+TCS3472_CONTROL	LITERAL1
+TCS3472_ID	LITERAL1
+TCS3472_STATUS	LITERAL1
+TCS3472_CDATAL	LITERAL1
+TCS3472_CDATAH	LITERAL1
+TCS3472_RDATAL	LITERAL1
+TCS3472_RDATAH	LITERAL1
+TCS3472_GDATAL	LITERAL1
+TCS3472_GDATAH	LITERAL1
+TCS3472_BDATAL	LITERAL1
+TCS3472_BDATAH	LITERAL1
